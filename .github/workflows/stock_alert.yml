@@ -30,7 +30,7 @@ jobs:
         run: Rscript -e "install.packages(c('quantmod', 'emayili', 'yaml', 'purrr'), repos='https://cloud.r-project.org')"
 
       - name: Run stock alert
-        run: Rscript check_stock.R
+        run: Rscript stock_alert.R
         env:
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
