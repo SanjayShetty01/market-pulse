@@ -1,11 +1,11 @@
 stocks:
   - name: "NIFTY 50"
     ticker: "^NSEI"
-    threshold: -1.0
+    threshold: -0.80
     alert_emails:
       - "shettysanjay01@gmail.com"
   - name: "NIFTY MIDCAP 150"
     ticker: "NIFTYMIDCAP150.NS"
-    threshold: -1.5
+    threshold: -0.80
     alert_emails:
       - "shettysanjay01@gmail.com"
