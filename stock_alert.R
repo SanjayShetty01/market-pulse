@@ -86,8 +86,8 @@ tryCatch({
     list(stock = stock, result = get_change_pct(stock$ticker))
   })
   
-  fetch_errors <- purrr::keep(results, \(x) ! is.null(x$result$error))
-  valid        <- purrr::discard(results, \(x) ! is.null(x$result$error))
+  fetch_errors <- purrr::keep(results, \(x) !is.null(x$result$error))
+  valid        <- purrr::keep(results, \(x) is.null(x$result$error))
   alerts       <- purrr::keep(valid, \(x) x$result$change_pct <= x$stock$threshold)
   
   purrr::walk(valid, \(x) {
