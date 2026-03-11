@@ -23,7 +23,10 @@ jobs:
           key: r-${{ hashFiles('**/config.yml') }}-${{ runner.os }}
           restore-keys: r-${{ runner.os }}-
 
-      - name: Install dependencies
+      - name: Install system dependencies
+        run: sudo apt-get install -y libssl-dev libcurl4-openssl-dev
+
+      - name: Install R packages
         run: Rscript -e "install.packages(c('quantmod', 'emayili', 'yaml', 'purrr'), repos='https://cloud.r-project.org')"
 
       - name: Run stock alert
