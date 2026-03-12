@@ -12,7 +12,7 @@ EMAIL_PASS <- Sys.getenv("EMAIL_PASS")
 send_email <- function(subject, body, to) {
   smtp <- emayili::server(
     host     = "smtp.gmail.com",
-    port     = 465,
+    port     = 587,
     username = EMAIL_USER,
     password = EMAIL_PASS
   )
