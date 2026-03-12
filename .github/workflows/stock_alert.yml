@@ -7,7 +7,7 @@ on:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v3
@@ -24,13 +24,13 @@ jobs:
           restore-keys: r-${{ runner.os }}-
 
       - name: Install system dependencies
-        run: sudo apt-get install -y libssl-dev libcurl4-openssl-dev
+        run: sudo apt-get install -y libssl-dev libcurl4-openssl-dev libcurl4
 
       - name: Install R packages
-        run: Rscript -e "install.packages(c('quantmod', 'sendmailR', 'yaml', 'purrr'), repos='https://cloud.r-project.org')"
+        run: Rscript -e "install.packages(c('quantmod', 'emayili', 'yaml', 'purrr'), repos='https://cloud.r-project.org')"
 
       - name: Run stock alert
-        run: Rscript check_stock.R
+        run: Rscript stock_alert.R
         env:
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
