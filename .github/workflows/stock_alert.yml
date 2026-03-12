@@ -27,10 +27,10 @@ jobs:
         run: sudo apt-get install -y libssl-dev libcurl4-openssl-dev
 
       - name: Install R packages
-        run: Rscript -e "install.packages(c('quantmod', 'emayili', 'yaml', 'purrr'), repos='https://cloud.r-project.org')"
+        run: Rscript -e "install.packages(c('quantmod', 'sendmailR', 'yaml', 'purrr'), repos='https://cloud.r-project.org')"
 
       - name: Run stock alert
-        run: Rscript stock_alert.R
+        run: Rscript check_stock.R
         env:
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
