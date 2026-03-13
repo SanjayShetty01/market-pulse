@@ -1,8 +1,6 @@
 name: Stock Alert (R)
 
 on:
-  schedule:
-    - cron: '56 5 * * 1-5'
   workflow_dispatch:
 
 jobs:
