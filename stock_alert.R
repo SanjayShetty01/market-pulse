@@ -15,7 +15,7 @@ send_email <- function(subject, body, to) {
     port     = 587,
     username = EMAIL_USER,
     password = EMAIL_PASS,
-    protocol = "tls"
+    protocol = "smtp"
   )
   email <- emayili::envelope(
     to      = to,
