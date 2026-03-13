@@ -142,6 +142,9 @@ tryCatch({
   if (length(alerts) == 0 && length(fetch_errors) == 0) {
     cat("No alerts triggered.\n")
   }
+
+  quit(status = 0)
+
   
 }, error = function(e) {
   send_failure(conditionMessage(e))
