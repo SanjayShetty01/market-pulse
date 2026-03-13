@@ -2,7 +2,7 @@ name: Stock Alert (R)
 
 on:
   schedule:
-    - cron: '30 6 * * 1-5'  # 12pm IST, weekdays only
+    - cron: '47 6 * * 1-5'  # 12pm IST, weekdays only
   workflow_dispatch:
 
 jobs:
