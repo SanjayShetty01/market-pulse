@@ -143,8 +143,7 @@ tryCatch({
     cat("No alerts triggered.\n")
   }
 
-  quit(status = 0)
-
+  quit(save = "no", status = 0, runLast = FALSE)
   
 }, error = function(e) {
   send_failure(conditionMessage(e))
