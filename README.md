@@ -6,7 +6,7 @@
 
 I built this because I wanted a simple daily nudge when the market dips, just an email at noon telling me if something worth paying attention to happened.
 
-It runs every weekday at 12pm IST via GitHub Actions, checks the day's low for configured indices against a threshold, and sends an email if anything breaches it. 12pm gives a 2 hour window to act before the 2pm mutual fund cutoff - early enough to decide.
+It runs every weekday at 12pm IST, triggered by cron-job.org via GitHub Actions workflow_dispatch. GitHub Actions' built-in cron scheduler is unreliable on free tier - it can be delayed by 30+ minutes or skipped entirely during high load, which matters when you have a 2pm mutual fund cutoff to work with, checks the day's low for configured indices against a threshold, and sends an email if anything breaches it. 12pm gives a 2 hour window to act before the 2pm mutual fund cutoff - early enough to decide.
 
 ## How it works
 
