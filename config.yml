@@ -12,7 +12,7 @@ stocks:
       - "shettysanjay01@gmail.com"
       
   - name: "UTI Gold ETF"
-  ticker: "GOLDBETA.NS"
-  threshold: -0.50
-  alert_emails:
-    - "shettysanjay01@gmail.com"
+    ticker: "GOLDBETA.NS"
+    threshold: -0.50
+    alert_emails:
+      - "shettysanjay01@gmail.com"
