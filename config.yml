@@ -37,8 +37,9 @@ stocks:
     alert_emails:
       - "shettysanjay01@gmail.com"
       
-  - name: "Gold Futures (Dollar denominated"
+  - name: "Gold Futures (Dollar denominated)"
     ticker: "GC=F"
     threshold: -0.50
     alert_emails:
       - "shettysanjay01@gmail.com"
+      - "deek2588@gmail.com"
