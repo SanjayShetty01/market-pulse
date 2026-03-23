@@ -24,6 +24,8 @@ send_email <- function(subject, body, to) {
     text    = body
   )
   smtp(email)
+  rm(smtp, email)
+  gc()
 }
 
 send_failure <- function(msg) {
