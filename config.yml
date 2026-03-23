@@ -43,3 +43,9 @@ stocks:
     alert_emails:
       - "shettysanjay01@gmail.com"
       - "deek2588@gmail.com"
+
+  - name: "VIX India Index"
+    ticker: "^INDIAVIX"
+    threshold: 5.00
+    alert_emails:
+      - "shettysanjay01@gmail.com"
