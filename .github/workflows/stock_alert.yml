@@ -14,19 +14,12 @@ jobs:
         with:
           r-version: 'release'
 
-      - name: Cache R packages
-        uses: actions/cache@v3
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: r-${{ runner.os }}-${{ hashFiles('**/stock_alert_r.yml') }}
-          restore-keys: r-${{ runner.os }}-
-
       - name: Install system dependencies
         run: sudo apt-get install -y libssl-dev libcurl4-openssl-dev libcurl4 --fix-broken
-
-      - name: Install R packages
-        run: Rscript -e "install.packages(c('quantmod', 'emayili', 'yaml', 'purrr'), repos='https://cloud.r-project.org')"
-
+        
+      - name: Restore renv
+        uses: r-lib/actions/setup-renv@v2
+      
       - name: Run stock alert
         run: Rscript stock_alert.R
         env:
